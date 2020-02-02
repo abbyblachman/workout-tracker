@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const PORT = 8080;
 const app = express();
 const seeders = require('./seeders/seed');
+require('dotenv').config()
 
 
 app.use(logger("dev"));
@@ -13,9 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://<dbuser>:<dbpassword>@ds033069.mlab.com:33069/heroku_28hk2qcc', {
-  useNewUrlParser: true
-});
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout-tracker');
 
 
 // routes
