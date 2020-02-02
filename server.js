@@ -13,9 +13,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || process.env.PROD_MONGODB || 'mongodb://localhost/workout', {
+mongoose.connect(process.env.MONGODB_URI || process.env.PROD_MONGODB || process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://localhost/workout', {
   useNewUrlParser: true
-});
+},
+{ server: { auto_reconnect: true } });
+
+// mongodb.MongoClient.connect(uri, { server: { auto_reconnect: true } }, function (err, db) {
+//   /* adventure! */
+// });
 
 
 // routes
