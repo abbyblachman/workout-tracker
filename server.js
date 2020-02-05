@@ -18,7 +18,7 @@ app.use(express.static("public"));
 // },
 // { server: { auto_reconnect: true } });
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout-tracker", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // mongodb.MongoClient.connect(uri, { server: { auto_reconnect: true } }, function (err, db) {
 //   /* adventure! */
