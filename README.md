@@ -8,7 +8,7 @@ The application stores entries, and renders them in charts using chart js.
 
 ## Starting the app locally
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+Start by installing front and backend dependencies. While in the root directory, run the following command:
 
 ```
 npm install
